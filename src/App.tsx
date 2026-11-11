@@ -1,16 +1,11 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import './App.css';
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
 
 function App() {
-
-  return (
-    <Grid>
+    return (
+        <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
 
             {/* Encabezado */}
             <Grid size={{ xs: 12, md: 12 }}>
@@ -22,6 +17,7 @@ function App() {
                 container sx={{ justifyContent: 'flex-end', alignItems: 'center' }}>
 
                 <AlertUI description="No se prevén lluvias" />
+                <AlertUI description="Índice UV alto" severity="warning" variant="filled" />
 
             </Grid>
 
@@ -45,7 +41,7 @@ function App() {
             <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
 
         </Grid>
-  )
+    );
 }
 
-export default App
+export default App;
